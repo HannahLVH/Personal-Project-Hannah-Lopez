@@ -21,6 +21,7 @@ comic card cover: 400px width
     --Sienna-Burnt: #E07A5F;
     --Blue-Delft: #3D405B;
     --Blue-Cambridge: #81B29A;
+    --Light-Blue-Cambridge:  #92b5a4;
     --Sunset: #F2CC8F;
     --white: #FFFFFF;
     --black: #000000;
@@ -36,8 +37,12 @@ body {
     font-size: 1.5rem;
 } 
 
-body h1, h2, h3 {
+body h1, h2, h3, h4 {
     font-family: 'Caveat', sans-serif;
+}
+
+body p {
+    font-family: 'Josefin Slab', sans-serif;
 }
 
 /* nav styling */
@@ -53,7 +58,21 @@ body h1, h2, h3 {
     background-color: var(--Sienna-Burnt);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    font-family: 'Caveat', sans-serif;
+}
+
+.nav-container-2 {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    padding-top: 20px; padding-bottom: 20px;
+    background-color: var(--Sienna-Burnt);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     /* flex-wrap: wrap; */
     font-family: 'Caveat', sans-serif;
@@ -61,7 +80,7 @@ body h1, h2, h3 {
 
 .nav-banner-container {
     /* box-sizing: border-box; */
-    width: 30%;
+    width: 10%;
     /* display: flex;
     align-items: center; */
     /* min-width: 50%;
@@ -81,7 +100,16 @@ body h1, h2, h3 {
     /* justify-content: space-evenly; */
 }
 
+.nav-menu-container-2 {
+    max-width: 100%;
+    min-width: 70%;
+    /* margin-right: 5%; */
+    display: flex;
+    justify-content: space-around;
+} 
+
 .nav-menu-list {
+    width: 100%;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -146,19 +174,112 @@ body h1, h2, h3 {
     font-family: 'Josefin Slab', sans-serif;
 }
 
-.text-container-1 h1, h2 {
-    color: var(--blue);
+.features-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.text-container-2 {
+    width: 40%;
+    /* height: 10%; */
+    background-color: var(--Light-Blue-Cambridge);
+    border: 0.5em solid var(--Light-Blue-Cambridge);
+    border-radius: 50%;
+    margin-top: 1em;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.text-container-2 h2, ul {
+    margin: 0;
+}
+
+.text-container-2 p {
+    text-align: center;
+    /* margin: 0.5em; */
+    
+}
+
+.planner-sample {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.planner-sample h3 {
+    margin-top: 2em;
+    margin-bottom: 0.em;
+    padding-right: 50%;
+}
+
+.feature-example-img {
+    width: 70%;
+    /* align-self: center; */
+    /* border: 2px solid var(--Blue-Delft); */
+    border-radius: 10px;
 }
 
 .content-header {
     overflow-wrap: break-word;
 } 
 
-
 .collection-details-list {
     display: flex;
     justify-content: center;
     font-family: 'Josefin Slab', sans-serif;
+}
+
+
+
+@media screen and (max-width: 769px) {
+    
+    .features-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: ;
+        /* flex-wrap: wrap; */
+
+
+    }
+
+    .text-container-2 {
+        width: 90%;
+        background-color: var(--Light-Blue-Cambridge);
+        border: 0.5em solid var(--Light-Blue-Cambridge);
+        border-radius: 50%;
+        padding-top: 3em;
+        padding-left: 1em;
+        padding-right: 1em;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .planner-sample {
+        display: none;
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .planner-sample h3 {
+        padding: 0;
+    }
+
+    .feature-example-img {
+        width: 80%;
+        align-self: center;
+        border-radius: 10px;
+    }
 }
 
 /* admin page styling */
@@ -167,9 +288,9 @@ body h1, h2, h3 {
     text-align: center;
 }
 
-.yellow-button {
-    color: var(--blue);
-    background-color: var(--yellow);
+.cambridge-button {
+    color: var(--black);
+    background-color: var(--Blue-Cambridge);
     padding-top: 5px;
     padding-bottom: 3px;
 }
@@ -219,6 +340,79 @@ body h1, h2, h3 {
     }
 
 }
+
+/* new pp form styling */
+
+.new-pp-form-container {
+    width: 90%;
+    margin: 0.2em;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Slab', sans-serif;
+}
+
+.pp-section {
+    display: flex;   
+    flex-direction: row; 
+    margin-bottom: 1.5em;
+}
+
+.pp-textarea {
+    box-sizing: border-box;
+    flex-grow: 2;
+    width: 30vw;
+    min-width: 1em;
+    max-width: 20em;
+    min-height: 10em;
+    flex-basis: 100em;
+    margin: 0.5em;
+    /* margin-right: 1.5em; */
+}
+
+.pp-titles {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pp-titles h4 {
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+
+@media screen and (max-width: 768px) {
+    .new-pp-form-container {
+        width: 90%;
+        margin: 0.2em;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Josefin Slab', sans-serif;
+    }
+
+    .new-pp-form-container {
+        max-width: 100%;
+        margin: 0;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+    }
+
+    .pp-section {
+        display: flex;    
+        flex-direction: column;
+    }
+
+} 
+
 
 /* form styling */
 
@@ -331,7 +525,7 @@ body h1, h2, h3 {
     }
 }
 
-.synopsis-textarea {
+/* .synopsis-textarea {
     box-sizing: border-box;
     flex-grow: 2;
     width: 50vw;
@@ -340,7 +534,7 @@ body h1, h2, h3 {
     min-height: 10em;
     flex-basis: 100em;
     margin-right: 1.5em;
-}
+} */
 
 @media screen and (max-width: 768px) {
     .synopsis-textarea {
@@ -577,7 +771,7 @@ body h1, h2, h3 {
     /* width: 100%; */
     max-width: 100%;
     min-width: 100%;
-    border-top: 5pt solid var(--yellow);
+    /* border-top: 5pt solid var(--yellow); */
     background-color: var(--Sienna-Burnt);
     font-family: 'Caveat', sans-serif;
     padding-bottom: 1em;
@@ -689,7 +883,8 @@ body h1, h2, h3 {
         }
     
         .nav-banner-container {
-            min-width: 30%;
+            min-width: 20%;
+            padding-left: 0.5em;
             /* max-width: 180%; */
         }
     }

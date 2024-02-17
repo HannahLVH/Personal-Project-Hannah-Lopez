@@ -8,31 +8,33 @@
 
     <script src="https://kit.fontawesome.com/73a9073be0.js" crossorigin="anonymous"></script>
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 </head>
 <body>
 <!-- NAV SECTION -->
     <div class="nav-section">
-        <nav class="nav-container">
+        <nav class="nav-container-2">
             <span class="nav-banner-container">
-            <a href="index.html"><img src="./public/images/CodeSquad-Comics-logo.png" alt="blue rectangular banner with the words 'CodeSquad Comics' written in teal on the right side and green and yellow books of different sizes on the left side" class="nav-banner-img"></a>
+            <a href="index.html"><img src="./public/images/Practice-Time-Logo.png" alt="blue rectangular banner with the words 'CodeSquad Comics' written in teal on the right side and green and yellow books of different sizes on the left side" class="nav-banner-img"></a>
             </span>
-            <div class="nav-menu-container">
+            <div class="nav-menu-container-2">
                 <ul class="nav-menu-list nav-link-styling">
-                    <li class="nav-horizontal-menu"><a href="index.html">HOME</a></li>
-                    <li class="nav-horizontal-menu"><a href="about.html">ABOUT</a></li>
-                    <li class="nav-horizontal-menu"><a href="login.html">LOGIN</a></li>
+                    <!-- <li class="nav-horizontal-menu"><a href="index.html">HOME</a></li> -->
+                    <li class="nav-horizontal-menu"><a href="#">MY PLANS</a></li>
+                    <li class="nav-horizontal-menu"><a href="create.html">CREATE NEW PLAN +</a></li>
+                    <li class="nav-horizontal-menu"><a href="login.html">MY PROFILE</a></li>
                 </ul>
             </div>
             <div class="hamburger-menu">
-                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>    
+                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>  
             </div>
         </nav>
     </div>
@@ -42,13 +44,13 @@
         <div class="text-container-1">
             <span class="content-header">
                 <header>
-                    <h1>CREATE NEW COMIC</h1>
+                    <h1>CREATE NEW PRACTICE PLAN</h1>
                 </header>
             </span>
-            <div class="form-container">
+            <div class="new-pp-form-container">
                 <form action="#">
-                    <div class="form-fields">
-                        <div>
+                    <div class="new-pp-form-fields">
+                        <!-- <div>
                             <label for="title">Title:</label>
                             <input type="title" name="title" id="title" placeholder="Title" />
                         </div>
@@ -82,14 +84,52 @@
                         <div>
                             <label for="rating">Rating:</label>
                             <input type="rating" name="rating" id="rating" placeholder="number (0-5)"/>
+                        </div> -->
+                        <div>
+                            <div class="pp-section">
+                                <div>
+                                    <label class="pp-tools">Activity #1:</label>
+                                    <textarea class="pp-textarea" id="pp-activity-text" name="pp-activity-text" placeholder="Example: Warm ups / Scales"></textarea>
+                                </div>  
+                                <div>
+                                    <label class="pp-notes">Annotations:</label>
+                                    <textarea class="pp-textarea" id="pp-annotations-text" name="pp-annotations-text" placeholder="What should be the focus of this activity?"></textarea>
+                                </div>  
+                            </div>
                         </div>
                         <div>
-                            <label class="synopsis-label">Synopsis:</label>
-                            <textarea class="synopsis-textarea" id="synopsis" name="synopsis" placeholder="Synopsis"></textarea>
-                        </div>  
-                        <br>             
-                        <div class="submit-button">
-                            <button class="yellow-button">Submit</button>
+                            <div class="pp-section">
+                                <div>
+                                    <label class="pp-tools">Activity #2:</label>
+                                    <textarea class="pp-textarea" id="pp-activity-text" name="pp-activity-text" placeholder="Example: Exercises / Etudes"></textarea>
+                                </div>  
+                                <div>
+                                    <label class="pp-notes">Annotations:</label>
+                                    <textarea class="pp-textarea" id="pp-annotations-text" name="pp-annotations-text" placeholder="What should be the focus of this activity?"></textarea>
+                                </div>  
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pp-titles">
+                                <div class="pp-section">
+                                    <div>
+                                        <label class="pp-tools">Activity #3:</label>
+                                        <textarea class="pp-textarea" id="pp-activity-text" name="pp-activity-text" placeholder="Example: Songs/Pieces"></textarea>
+                                    </div>  
+                                    <div>
+                                        <label class="pp-notes">Annotations:</label>
+                                        <textarea class="pp-textarea" id="pp-annotations-text" name="pp-annotations-text" placeholder="What should be the focus of this activity?"></textarea>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="add-section-button">
+                                <button class="cambridge-button">ADD SECTION +</button>
+                            </div>            
+                            <div class="save-button">
+                                <button class="cambridge-button">SAVE</button>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -98,13 +138,14 @@
         <br>
     </div>
 <!-- FOOTER SECTION -->
+<div class="footer-section">
     <div class="footer-container">
-        <footer class="footer-text-styling footer-link-styling">
+        <footer class="footer-menu-container footer-text-styling footer-link-styling">
             <div class="footer-menu">
-                <div class="visit-us">
+                <!-- <div class="visit-us">
                     <h3>VISIT US</h3>
                     <p>CodeSquad Comics<br>Dorchester Ave<br>Boston, MA 02124</p>
-                </div>
+                </div> -->
                 <div>
                     <h3>LINKS</h3>
                     <a href="index.html">Home</a><br>
@@ -119,13 +160,16 @@
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
-                <div>
+                <div class="product-container">
+                    <div class="product">
                     <h3>A PRODUCT OF</h3>
-                    <a href="http://codesquad.org/" target="_blank" rel="noopener noreferrer"><img src="./public/images/CodeSquad-logo-b.png" alt="The Code Squad logo: a red opening angle bracket and a black closing angle bracket followed by the word 'CODE' in red upper case letters and the word 'SQUAD' written underneath in black upper case letters. Right below the suffix '.org' is written in red upper case letters" class="footer-codesquad-logo"></a>
+                    </div>
+                    <a href="http://codesquad.org/" target="_blank" rel="noopener noreferrer"><img src="./public/images/Hannah-Lovez-logo.png" alt="The Code Squad logo: a red opening angle bracket and a black closing angle bracket followed by the word 'CODE' in red upper case letters and the word 'SQUAD' written underneath in black upper case letters. Right below the suffix '.org' is written in red upper case letters" class="footer-codesquad-logo"></a>
                 </div>       
             </div>
         </footer>
     </div>
+</div>
 <!-- END OF FOOTER SECTION -->
 </body>
 </html>
