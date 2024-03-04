@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Time - Account Settings</title>
+    <title>Practice Plan - Profile Settings</title>
     <link rel="stylesheet" type="text/css" href="./public/styles/styles.css">
 
     <script src="https://kit.fontawesome.com/73a9073be0.js" crossorigin="anonymous"></script>
@@ -58,14 +58,36 @@
         <div class="text-container-1">
             <span class="content-header">
                 <header>
-                    <h1>Account Settings</h1>
+                    <h1>My Profile</h1>
                 </header>
             </span>
-            <div class="account-settings-menu">
-                <div class="account-settings-buttons">
-                    <button>Update Email Address</button>
-                    <button>Change Password</button>
-                    <button>Delete Account</button>
+            <div class="profile-form-container">
+                <div class="profile-form-fields">
+                    <form action="#">
+                            <div class="profile-pic-section-container">
+                                <label for="profile-pic">Profile Picture:</label>
+                                    <div class="profile-pic-section">
+                                        <div class="profile-pic-thumbnail-container">
+                                            <div class="profile-pic-thumbnail"></div>
+                                            <div class="profile-pic-input"><input type="file"  name="profile-pic" id="profile-pic" accept="image/*"/></div>
+                                        </div>
+                                    </div>
+                            </div>
+                        <div class="profile-form-section">
+                            <label for="username">Username:</label>
+                            <input type="username" name="username" id="username" placeholder="Username" />
+                            <div class="save-button">
+                            <button class="cambridge-button">EDIT</button>
+                            </div>
+                        </div>
+                        <div class="profile-form-section">
+                            <label for="about-me">About Me:</label>
+                            <textarea type="about-me" name="about-me" id="about-me" placeholder="About me"></textarea>
+                            <div class="save-button">
+                                <button class="cambridge-button">EDIT</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

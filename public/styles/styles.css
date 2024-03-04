@@ -358,7 +358,9 @@ li:hover .profile-dropdown-styling {
 /* account settings page styling */
 
 .account-settings-menu {
-    margin-top: 0;
+    width: 50%;
+    margin: auto;
+
 }
 
 .account-settings-buttons {
@@ -366,13 +368,14 @@ li:hover .profile-dropdown-styling {
     flex-direction: column;
     justify-content: space-evenly;
     margin: auto;
-    width: 10em;
+    width: 100%;
 }
 
 .account-settings-buttons button {
     padding: 1em;
     border-radius: 5em;
     margin-bottom: 1.5em;
+
 }
 
 /* admin page styling */
@@ -420,7 +423,7 @@ li:hover .profile-dropdown-styling {
     background-color: var(--grey);
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 769px) and (max-width: 769px) {
 
     .table-container {
         margin-bottom: 2em;
@@ -432,6 +435,225 @@ li:hover .profile-dropdown-styling {
         overflow-x: auto;
     }
 
+}
+
+/* profile form styling */
+
+.profile-form-container {
+    width: 80%;
+    margin: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* align-items: center; */
+    font-family: 'Josefin Slab', sans-serif;
+}
+
+.profile-form-fields {
+    width: 100%;
+    /* padding: 1em; */
+    /* align-self: center; */
+}
+
+.profile-form-section {
+    width: 100%;
+    margin: auto;
+    display: flex;   
+    flex-direction: row; 
+    margin-bottom: 1.5em;
+    justify-content: space-a;
+    /* align-items: center; */
+}
+
+.profile-pic-section-container {
+    width: 100%;
+    margin: auto;
+    display: flex;   
+    flex-direction: row; 
+    margin-bottom: 1.5em;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.profile-pic-section-container label {
+    width: 6em;
+    min-width: 6em;
+}
+
+.profile-form-section label {
+    /* margin-right: 0.5em;  */
+    width: 6em;
+    min-width: 6em;
+    /* align-self: flex-end; */
+    /* text-align: right; */
+}
+
+.profile-form-section input {
+    width: 20em;
+    min-width: 9em;
+    padding: 0.5em;
+}
+
+.profile-form-section textarea {
+    width: 20em;
+    min-width: 9em;
+    height: 10em;
+    padding: 0.5em;
+}
+
+.profile-pic-section {
+    width: 70%;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.profile-pic-thumbnail-container {
+    width: 6em;
+    /* margin: auto; */
+    /* margin: 1em; */
+    /* margin-right: 5em; */
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /* justify-content: space-between; */
+}
+
+.profile-pic-thumbnail {
+    margin: auto;
+    width: 6em;
+    min-width: 5em;
+    height: 6em;
+    border: solid 2px var(--black);
+    background-color: var(--white);
+}
+
+.profile-pic-input-container {
+    padding-left: 4em;
+
+}
+
+.profile-form-section button {
+    padding: 0.5em;
+    border-radius: 5em;
+    margin-left: 1em;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .profile-pic-section-container {
+        width: 100%;
+        margin: auto;
+        display: flex;   
+        flex-direction: column; 
+        margin-bottom: 1.5em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .profile-pic-section-container label {
+        padding-bottom: 0.2em;
+    }
+
+    .profile-form-section {
+        width: 100%;
+        margin: auto;
+        display: flex;   
+        flex-direction: column; 
+        margin-bottom: 1.5em;
+        justify-content: center;
+        
+    }
+
+    .profile-form-section label {
+        padding-bottom: 0.2em;
+    }
+
+    .profile-form-section input {
+        width: 22em;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .profile-form-section textarea {
+        width: 22em;
+        height: 10em;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .save-button {
+        /* margin: auto; */
+    }
+
+    .profile-form-section button {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile-form-container {
+        /* width: 100%; */
+    }
+
+    .profile-pic-section-container {
+        width: 100%;
+        margin: auto;
+        display: flex;   
+        flex-direction: column; 
+        margin-bottom: 1.5em;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic-section-container label {
+        padding-bottom: 0.2em; 
+    }
+
+    .profile-pic-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-form-section {
+        width: 100%;
+        margin: auto;
+        display: flex;   
+        flex-direction: column; 
+        margin-bottom: 1.5em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-form-section label {
+        text-align: center;
+        padding-bottom: 0.2em;
+    }
+
+    .profile-form-section input {
+        width: 100%;
+        /* min-width: 5em; */
+        /* min-width: 5em; */
+        padding: 0.5em;
+        margin-bottom: 1em;
+    }
+    
+    .profile-form-section textarea {
+        width: 100%;
+        /* min-width: 5em; */
+        /* min-width: 5em; */
+        height: 10em;
+        padding: 0.5em;
+        margin-bottom: 1em;
+    }
+    
+    .profile-form-section button {
+        margin-left: 0;
+    }
 }
 
 /* new pp form styling */
@@ -470,14 +692,15 @@ li:hover .profile-dropdown-styling {
 
 
 .pp-textarea {
-    box-sizing: border-box;
-    flex-grow: 3;
+    /* ?? why is the textarea resizing if border-box is off? */
+    /* box-sizing: border-box; */ 
+    /* flex-grow: 3; */
     width: 100%;
     min-width: 1em;
     max-width: 50em;
     min-height: 10em;
     max-height: 10em;
-    flex-basis: 10em;
+    /* flex-basis: 10em; */
     margin: 0.5em;
     padding: 0.5em;
 } 
@@ -972,7 +1195,7 @@ li:hover .profile-dropdown-styling {
     margin-right: 0;
 }
 
-.footer-codesquad-logo {
+.footer-hannah-lovez-logo {
     position: relative;
     left: 1em;
 }
@@ -1183,7 +1406,7 @@ li:hover .profile-dropdown-styling {
             font-size: 2em;
         }
 
-        .footer-codesquad-logo {
+        .footer-hannah-lovez-logo {
             max-width: 5em;
             min-width: 2em;
             position: relative;
@@ -1202,12 +1425,12 @@ li:hover .profile-dropdown-styling {
             width: 100%;
         }
 
-        .footer-codesquad-logo {
+        .footer-hannah-lovez-logo {
             width: 1em; 
             align-self: center;
         }
     
-        .footer-codesquad-logo {
+        .footer-hannah-lovez-logo {
             max-width: 60%;
             min-width: 60%;
         } 
@@ -1216,7 +1439,7 @@ li:hover .profile-dropdown-styling {
     
     @media screen and (max-width: 768px) {
     
-        .footer-codesquad-logo {
+        .footer-hannah-lovez-logo {
             max-width: 5em;
             min-width: 2em;
             position: relative;
