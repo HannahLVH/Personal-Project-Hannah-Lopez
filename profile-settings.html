@@ -21,20 +21,20 @@
 <!-- NAV SECTION -->
     <div class="nav-section">
         <nav class="nav-container">
-            <span class="nav-banner-container">
-            <a href="index.html"><img src="./public/images/Practice-Time-Logo.png" alt="practice time logo: a black letter 'p' over a black letter 't'" class="nav-banner-img"></a>
+            <span class="nav-logo-background">
+            <a href="index.html"><img src="./public/images/Practice-Time-Logo.png" alt="practice time logo: a black letter 'p' over a black letter 't'" class="nav-logo-img"></a>
             </span>
             <div class="nav-menu-container">
                 <ul class="nav-menu-list nav-link-styling">
-                    <li class="nav-horizontal-menu"><a href="#">MY PLANS</a></li>
-                    <li class="nav-horizontal-menu"><a href="create-new-plan.html">CREATE NEW PLAN +</a></li>
+                    <li class="nav-horizontal-menu"><a href="practice-plans-list.html">MY PRACTICE PLANS</a></li>
+                    <li class="nav-horizontal-menu"><a href="create-new-plan.html">CREATE NEW PLAN+</a></li>
                     <div class="profile-dropdown-container profile-dropdown-menu"> 
-                        <li class="nav-horizontal-menu"><a href="login.html">MY PROFILE</a>
+                        <li class="nav-horizontal-menu"><a href="profile-settings.html">MY PROFILE</a>
                             <ul class="profile-dropdown-styling">
                                 <li><a href="profile-settings.html">Edit Profile</a></li>
                                 <li><a href="account-settings.html">Account Settings</a></li>
-                                <li><a href="#">Student Roster</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li><a href="student-roster.html">Student Roster</a></li>
+                                <li><a href="login.html">Log Out</a></li>
                             </ul>
                         </li>
                     </div>
@@ -68,8 +68,8 @@
                                 <label for="profile-pic">Profile Picture:</label>
                                     <div class="profile-pic-section">
                                         <div class="profile-pic-thumbnail-container">
-                                            <div class="profile-pic-thumbnail"></div>
-                                            <div class="profile-pic-input"><input type="file"  name="profile-pic" id="profile-pic" accept="image/*"/></div>
+                                            <span class="profile-pic-thumbnail"></span>
+                                            <span class="profile-pic-input"><input type="file"  name="profile-pic" id="profile-pic" accept="image/*"/></span>
                                         </div>
                                     </div>
                             </div>
@@ -83,9 +83,9 @@
                         <div class="profile-form-section">
                             <label for="about-me">About Me:</label>
                             <textarea type="about-me" name="about-me" id="about-me" placeholder="About me"></textarea>
-                            <div class="save-button">
+                            <span class="save-button">
                                 <button class="cambridge-button">EDIT</button>
-                            </div>
+                            </span>
                         </div>
                     </form>
                 </div>
@@ -94,34 +94,34 @@
         <br>
     </div>
 <!-- FOOTER SECTION  -->
-<div class="footer-section">
-    <div class="footer-container">
-        <footer class="footer-menu-container footer-text-styling footer-link-styling">
-            <div class="footer-menu">
-                <div>
-                    <h3>LINKS</h3>
-                    <a href="index.html">Home</a><br>
-                    <a href="create-account.html">Join</a><br>
-                    <a href="login.html">Login</a>
-                </div>
-                <div>
-                    <h3>FOLLOW US</h3>
-                    <div class="footer-socials">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <div class="footer-section">
+        <div class="footer-container">
+            <footer class="footer-menu-container footer-text-styling footer-link-styling">
+                <div class="footer-menu">
+                    <div>
+                        <h3>LINKS</h3>
+                        <a href="index.html">Home</a><br>
+                        <a href="create-account.html">Join</a><br>
+                        <a href="login.html">Login</a>
                     </div>
-                </div>
-                <div class="product-container">
-                    <div class="product">
-                    <h3>A PRODUCT OF</h3>
+                    <div>
+                        <h3>FOLLOW US</h3>
+                        <span class="footer-socials">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </span>
                     </div>
-                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="./public/images/Hannah-Lovez-logo.png" alt="hannah lovez violin logo: a stamp of a violin inside a circle" class="footer-hannah-lovez-logo"></a>
-                </div>       
-            </div>
-        </footer>
+                    <div class="product-container">
+                        <span class="product">
+                        <h3>A PRODUCT OF</h3>
+                        </span>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><img src="./public/images/Hannah-Lovez-logo.png" alt="hannah lovez violin logo: a stamp of a violin inside a circle" class="footer-hannah-lovez-logo"></a>
+                    </div>       
+                </div>
+            </footer>
+        </div>
     </div>
-</div>
 <!-- END OF FOOTER SECTION -->
 </body>
 </html>

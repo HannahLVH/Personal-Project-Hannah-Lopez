@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Time - Practice Plans List</title>
+    <title>Practice Time - Student Roster</title>
     <link rel="stylesheet" type="text/css" href="./public/styles/styles.css">
 
     <script src="https://kit.fontawesome.com/73a9073be0.js" crossorigin="anonymous"></script>
@@ -56,199 +56,175 @@
 <!-- CONTENT SECTION -->
     <div class="content-section">
         <div class="text-container-1">
-            <span class="content-header">
-                <header class="table-header">
-                    <h1>My Practice Plans</h1>
-                </header>
-            </span>
+                <span class="content-header">
+                    <header class="table-header">
+                        <h1>Student Roster</h1>
+                    </header>
+                </span>
             <div class="table-container">
                 <div class="table-wrapper">
                     <table class="manage-table">
                         <thead>
                             <tr>
-                                <th>DATE CREATED</th>
-                                <th>CREATED BY</th>
-                                <th>MANAGE</th>
+                                <th>STUDENT NAME</th>
+                                <th>DATE ADDED</th>
+                                <th>MANAGE STUDENT</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>First Last</td>
                                 <td>_/_/___</td>
-                                <td>Teacher</td>
                                 <td>
                                     <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
                                         <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>_/_/___</td>
-                                <td>Teacher</button></td>
-                                <td>
-                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
-                                        <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>_/_/___</td>
-                                <td>Me</button></td>
-                                <td>
-                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
-                                        <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>_/_/___</td>
-                                <td>Me</button></td>
-                                <td>
-                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
-                                        <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>_/_/___</td>
-                                <td>Teacher</button></td>
-                                <td>
-                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
-                                        <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>_/_/___</td>
-                                <td>Me</td>
-                                <td>
-                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
-                                        <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>_/_/___</td>
-                                <td>Me</td>
-                                <td>
-                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
-                                        <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr class="gray-bg">
+                                <td>First Last</td>
                                 <td>_/_/___</td>
-                                <td>Teacher</td>
                                 <td>
                                     <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
                                         <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
+                                <td>First Last</td>
                                 <td>_/_/___</td>
-                                <td>Me</td>
                                 <td>
-                                    <select nama="manage-pp-options" id="manage-pp-options">
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
                                         <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="gray-bg">
+                                <td>First Last</td>
+                                <td>_/_/___</td>
+                                <td>
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
+                                        <option selected>Select an option:</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
+                                <td>First Last</td>
                                 <td>_/_/___</td>
-                                <td>Teacher</td>
                                 <td>
                                     <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
                                         <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="gray-bg">
+                                <td>First Last</td>
+                                <td>_/_/___</td>
+                                <td>
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
+                                        <option selected>Select an option:</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
+                                <td>First Last</td>
                                 <td>_/_/___</td>
-                                <td>Me</button></td>
                                 <td>
                                     <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
                                         <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="gray-bg">
+                                <td>First Last</td>
+                                <td>_/_/___</td>
+                                <td>
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
+                                        <option selected>Select an option:</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
+                                <td>First Last</td>
                                 <td>_/_/___</td>
-                                <td>Me</td>
                                 <td>
                                     <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
                                         <option selected>Select an option:</option>
-                                        <option value="completed-value">Completed</option>
-                                        <option value="pending-value">Pending</option>
-                                        <option value="assign-to-value">Assign to student</option>
-                                        <option value="duplicate-value">Duplicate value</option>
-                                        <option value="edit-value">Edit</option>
-                                        <option value="archive-value">Archive</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="gray-bg">
+                                <td>First Last</td>
+                                <td>_/_/___</td>
+                                <td>
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
+                                        <option selected>Select an option:</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>First Last</td>
+                                <td>_/_/___</td>
+                                <td>
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
+                                        <option selected>Select an option:</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="gray-bg">
+                                <td>First Last</td>
+                                <td>_/_/___</td>
+                                <td>
+                                    <select class="manage-pp-select" name="manage-pp-options" id="manage-pp-options">
+                                        <option selected>Select an option:</option>
+                                        <option value="view-profile-value">View Profile</option>
+                                        <option value="view-plans-value">View Plans</option>
+                                        <option value="create-new-pp-value">Create New Plan</option>
+                                        <option value="remove-value">Remove Student</option>
                                     </select>
                                 </td>
                             </tr>
