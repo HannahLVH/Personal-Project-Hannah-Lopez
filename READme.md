@@ -53,6 +53,7 @@
 <img alt="screenshot example of the create plan page on practice plan" src="https://github.com/HannahLVH/Personal-Project-Hannah-Lopez/blob/1acbd921c8e63a4c858514b7c1f57aedc0b967c3/public/images/feature-examples/feature-example-1.png" width="500">
 
   🎵 Practice Time is the studio companion for instrument practice sessions. 
+  
   🎵 Made by a musician for music students, teachers and performing artists. 
   
   🎵 With Practice Plan musicians can:
