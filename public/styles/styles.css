@@ -86,6 +86,10 @@ body button:active {
     background-color: var(--Eggshell);
 }
 
+.nav-logo-background img:active {
+    background-color: var(--Sunset);
+}
+
 .nav-banner-img {
     max-width: 100%;
     min-width: 100%;
