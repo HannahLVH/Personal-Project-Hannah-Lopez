@@ -27,9 +27,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 //ROUTES
+const planData = require("./data/data")
 
 app.get("/", (req, res, next) => {
-    res.status(200).json({success: {message: "Index Page"}});
+    res.status(200).json({success: {message: "Index Page"}, data: {planData}, statusCode: 200});
+
 })
 
 // app.use("/", siteRoutes);
