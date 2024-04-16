@@ -12,8 +12,8 @@ const cors = require("cors");
 
 //MIDDLEWARE
 
-// const siteRoutes = require()
-// const teacherRoutes = require()
+const siteRoutes = require("./routes/siteRoutes");
+const teacherRoutes = require("./routes/teacherRoutes");
 
 app.use(morgan("dev"));
 
@@ -29,13 +29,13 @@ app.use(express.static(path.join(__dirname, "public")));
 //ROUTES
 const planData = require("./data/data")
 
-app.get("/", (req, res, next) => {
+app.get("/index", (req, res, next) => {
     res.status(200).json({success: {message: "Index Page"}, data: {planData}, statusCode: 200});
 
 })
 
-// app.use("/", siteRoutes);
-// app.use("/teacher", teacherRoutes);
+app.use("/", siteRoutes);
+app.use("/teacher", teacherRoutes);
 
 app.listen(PORT, () => {
     console.log(`The server is listening ${PORT}`);
