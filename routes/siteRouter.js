@@ -15,34 +15,30 @@ router.get("/create-account", (req, res, next) => {
     res.json("Create account landing page")
 })
 
-router.get("/create-account/teacher", createTeacherAccount)
+router.post("/create-account/teacher", createTeacherAccount);
+router.post("/create-account/student", createStudentAccount);
+router.post("/create-account/musician", createMusicianAccount);
 
-router.post("/create-account/teacher", (req, res, next) => {
-    res.json("Teacher account")
+//for testing purposes
+router.get("/create-account/teacher", (req, res, next) => {
+    res.json("Create Teacher Account")
 })
-
-router.get("/create-account/student", createStudentAccount)
-
-router.post("/create-account/student", (req, res, next) => {
-    res.json("Student account")
+router.get("/create-account/student", (req, res, next) => {
+    res.json("Create Student Account")
 })
-
-router.get("/create-account/musician", createMusicianAccount)
-
-router.post("/create-account/musician", (req, res, next) => {
-    res.json("Musician account")
+router.get("/create-account/musician", (req, res, next) => {
+    res.json("Create Musician Account")
 })
 
 // delete account
 
-router.get("/delete-account", deleteAccount)
-
-router.delete("/delete-account", (req, res, next) => {
+router.delete("/delete-account", deleteAccount)
+// for testing purposes
+router.get("/delete-account", (req, res, next) => {
     res.json("Bye bye, account!")
 })
 
 //login
-
 router.get("/login", (req, res, next) => {
     res.json("Login landing page")
 })

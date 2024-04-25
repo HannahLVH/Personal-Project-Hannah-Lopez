@@ -35,7 +35,7 @@ const planData = require("./data/data")
 // })
 
 app.use("/", siteRouter);
-app.use("/", userRouter);
+app.use("/user", userRouter);
 
 app.listen(PORT, () => {
     console.log(`The server is listening ${PORT}`);
