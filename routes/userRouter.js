@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const {createTeacherPlan, createStudentPlan, createMusicianPlan} = require("../controllers/userControllers");
+
 //my account: user landing page
 
 router.get("/", (req, res, next) => {
@@ -17,21 +19,6 @@ router.get("/musician", (req, res, next) => {
 
 router.get("/student", (req, res, next) => {
     res.json("my account: student landing page");
-})
-
-// user CREATE plan page
-
-
-router.get("/teacher/create-plan", (req, res, next) => {
-    res.json("route to create practice plan (teacher)");
-})
-
-router.get("/student/create-plan", (req, res, next) => {
-    res.json("route to create practice plan (student)");
-})
-
-router.get("/musician/create-plan", (req, res, next) => {
-    res.json("route to create practice plan (musician)");
 })
 
 // user account settings
@@ -76,7 +63,25 @@ router.get("/musician/practice-plans", (req, res, next) => {
     res.json("route to musician's practice plans'");
 })
 
-// CREATE practice plans
+// Practice plan Operations
+// CREATE practice plan
+
+router.post("/teacher/create-plan", createTeacherPlan);
+router.post("/student/create-plan", createStudentPlan);
+router.post("/musician/create-plan", createMusicianPlan);
+
+router.get("/teacher/create-plan", (req, res, next) => {
+    res.json("route to create practice plan (teacher)");
+})
+
+router.get("/student/create-plan", (req, res, next) => {
+    res.json("route to create practice plan (student)");
+})
+
+router.get("/musician/create-plan", (req, res, next) => {
+    res.json("route to create practice plan (musician)");
+})
+
 // EDIT practice plans
 // DELETE practice plans
 
