@@ -1,5 +1,33 @@
 //EDIT Profile
+const editTeacherProfile = async (req, res, next) => {
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to EDIT Teacher profile"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
+}
 
+const editStudentProfile = async (req, res, next) => {
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to EDIT Student profile"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
+}
+
+const editMusicianProfile = async (req, res, next) => {
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to EDIT Musician profile"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
+}
 
 //CREATE Practice Plan
 const createTeacherPlan = async (req, res, next) => {
@@ -96,4 +124,4 @@ const deleteMusicianPlan = async (req, res, next) => {
     }
 }
 
-module.exports = {createTeacherPlan, createStudentPlan, createMusicianPlan, editTeacherPlan, editStudentPlan, editMusicianPlan, deleteTeacherPlan, deleteStudentPlan, deleteMusicianPlan}
+module.exports = {createTeacherPlan, createStudentPlan, createMusicianPlan, editTeacherPlan, editStudentPlan, editMusicianPlan, deleteTeacherPlan, deleteStudentPlan, deleteMusicianPlan, editTeacherProfile, editStudentProfile, editMusicianProfile}

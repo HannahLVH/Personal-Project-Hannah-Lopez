@@ -1,53 +1,91 @@
 const express = require("express");
 const router = express.Router();
 
-const {createTeacherPlan, createStudentPlan, createMusicianPlan, editTeacherPlan, editStudentPlan, editMusicianPlan, deleteTeacherPlan, deleteStudentPlan, deleteMusicianPlan} = require("../controllers/userControllers");
+const {createTeacherPlan, createStudentPlan, createMusicianPlan, editTeacherPlan, editStudentPlan, editMusicianPlan, deleteTeacherPlan, deleteStudentPlan, deleteMusicianPlan, editTeacherProfile, editStudentProfile,editMusicianProfile} = require("../controllers/userControllers");
 
 //my account: user landing page
 
 router.get("/", (req, res, next) => {
-    res.json("my account: user landing page");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW User Account Landing Page"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 router.get("/teacher", (req, res, next) => {
-    res.json("my account: teacher landing page");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Teacher Account Landing Page"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 router.get("/musician", (req, res, next) => {
-    res.json("my account: musician landing page");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Musician Account Landing Page"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 router.get("/student", (req, res, next) => {
-    res.json("my account: student landing page");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Student Account Landing Page"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 // user account settings
 
 router.get("/teacher/account-settings", (req, res, next) => {
-    res.json("route to teacher account settings");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Teacher Account Settings"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 router.get("/student/account-settings", (req, res, next) => {
-    res.json("route to student account settings");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Student Account Settings"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 router.get("/musician/account-settings", (req, res, next) => {
-    res.json("route to musician account settings");
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Musician Account Settings"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
 })
 
 // user EDIT profile
 
-router.get("/teacher/edit-profile", (req, res, next) => {
-    res.json("route to teacher edit profile");
-})
+router.put("/teacher/edit-profile", editTeacherProfile);
+router.put("/student/edit-profile", editStudentProfile);
+router.put("/musician/edit-profile", editMusicianProfile);
 
-router.get("/student/edit-profile", (req, res, next) => {
-    res.json("route to student edit profile");
-})
-
-router.get("/musician/edit-profile", (req, res, next) => {
-    res.json("route to musician edit profile");
-})
+router.get("/teacher/edit-profile", editTeacherProfile);
+router.get("/student/edit-profile", editStudentProfile);
+router.get("/musician/edit-profile", editMusicianProfile);
 
 // user practice plans
 
@@ -97,7 +135,13 @@ router.get("/musician/delete-plan", deleteMusicianPlan);
 // teacher student roster
 
 router.get("/teacher/student-roster", (req, res, next) => {
-    res.json("route to teacher student roster");
-})
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to VIEW Student Roster"}, statusCode: 200,})
+        }
+    } catch (error) {
+            console.log("Error")
+    }
+});
 
 module.exports = router;
