@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const {createTeacherPlan, createStudentPlan, createMusicianPlan} = require("../controllers/userControllers");
+const {createTeacherPlan, createStudentPlan, createMusicianPlan, editTeacherPlan, editStudentPlan, editMusicianPlan, deleteTeacherPlan, deleteStudentPlan, deleteMusicianPlan} = require("../controllers/userControllers");
 
 //my account: user landing page
 
@@ -64,26 +64,35 @@ router.get("/musician/practice-plans", (req, res, next) => {
 })
 
 // Practice plan Operations
-// CREATE practice plan
+    // CREATE practice plan
 
 router.post("/teacher/create-plan", createTeacherPlan);
 router.post("/student/create-plan", createStudentPlan);
 router.post("/musician/create-plan", createMusicianPlan);
 
-router.get("/teacher/create-plan", (req, res, next) => {
-    res.json("route to create practice plan (teacher)");
-})
+router.get("/teacher/create-plan", createTeacherPlan);
+router.get("/student/create-plan", createStudentPlan);
+router.get("/musician/create-plan", createMusicianPlan);
 
-router.get("/student/create-plan", (req, res, next) => {
-    res.json("route to create practice plan (student)");
-})
+    // EDIT practice plans
 
-router.get("/musician/create-plan", (req, res, next) => {
-    res.json("route to create practice plan (musician)");
-})
+router.put("/teacher/edit-plan", editTeacherPlan);
+router.put("/student/edit-plan", editStudentPlan);
+router.put("/musician/edit-plan", editMusicianPlan);
 
-// EDIT practice plans
-// DELETE practice plans
+router.get("/teacher/edit-plan", editTeacherPlan);
+router.get("/student/edit-plan", editStudentPlan);
+router.get("/musician/edit-plan", editMusicianPlan);
+
+    // DELETE practice plans
+
+router.delete("/teacher/delete-plan", deleteTeacherPlan);
+router.delete("/student/delete-plan", deleteStudentPlan);
+router.delete("/musician/delete-plan", deleteMusicianPlan);
+
+router.get("/teacher/delete-plan", deleteTeacherPlan);
+router.get("/student/delete-plan", deleteStudentPlan);
+router.get("/musician/delete-plan", deleteMusicianPlan);
 
 // teacher student roster
 
