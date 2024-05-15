@@ -1,5 +1,6 @@
 const userPlans = [
     {
+        id: 1,
         activity1: "Warm ups: A major scale",
         annotations1: "Always start practice sessions with a scale: First, play the entire scale with one long bow for each note. Then play scale again with “walk runn-ing, walk runn-ing” rhythm (♩♫ - ♩♫) <- 2 walk-running  per note. Remember to play “walk” (♩) with a long bow and “runn-ing” (♫) with short bows using just half of the bow",
         activity2: "Practice Rhythm exercises (“Lesson 9”) and Note exercises (“Lesson 18”)",
