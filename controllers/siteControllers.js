@@ -1,40 +1,40 @@
 const createTeacherAccount = async (req, res, next) => {
-try {
-    if (200) {
-        res.json("Route to create teacher account")
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to CREATE Teacher account"}, statusCode: 200})
+        }
+    } catch (error) {
+            res.status(400).json({error: {message: "Something went wrong while creating teacher account", statusCode: 400}})
     }
-} catch (error) {
-        console.log("Error")
-}
 };
 
 const createStudentAccount = async (req, res, next) => {
     try {
         if (200) {
-            res.json("Route to create student account")
+            res.status(200).json({success: {message: "Route to CREATE student account"}, statusCode: 200})
         }
     } catch (error) {
-            console.log("Error")
+            res.status(400).json({error: {message: "Something went wrong while creating student account", statusCode: 400}})
     }
-    };
+};
 
 const createMusicianAccount = async (req, res, next) => {
-try {
-    if (200) {
-        res.json("Route to create musician account")
+    try {
+        if (200) {
+            res.status(200).json({success: {message: "Route to CREATE musician account"}, statusCode: 200})
+        }
+    } catch (error) {
+            res.status(400).json({error: {message: "Something went wrong while creating musician account", statusCode: 400}})
     }
-} catch (error) {
-        console.log("Error")
-}
 };
 
 const deleteAccount = async (req, res, next) => {
     try {
         if (200) {
-            res.json("Route to delete account")
+            res.status(200).json({success: {message: "Route to DELETE Teacher account"}, statusCode: 200})
         }
     } catch (error) {
-            console.log("Error")
+            res.status(400).json({error: {message: "Something went wrong while deleting teacher account", statusCode: 400}})
     }
     };
 
