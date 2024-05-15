@@ -3,19 +3,19 @@ const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
 const planSchema = new Schema ({
-    actvity1: {
+    activity1: {
         type: String,
     },
     annotations1:{
         type: String,
     },
-    actvity2: {
+    activity2: {
         type: String,
     },
     annotations2:{
         type: String,
     },
-    actvity3: {
+    activity3: {
         type: String,
     },
     annotations3:{
