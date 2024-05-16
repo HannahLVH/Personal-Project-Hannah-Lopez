@@ -49,10 +49,10 @@ const getAllTeacherPlans = async (req, res, next) => {
     try {
         if (200) {
             await Plan.find({}).then((plans) =>
-            res.status(200).json({success: {message: "Route to VIEW Teacher Practice Plans"}, data: plans, statusCode: 200,}))
+            res.status(200).json({success: {message: "Route to VIEW Teacher Practice Plans"}, data: plans, statusCode: 200}))
         }
     } catch (error) {
-        res.status(400).json({error: {message: "Something went wrong while accessing teacher practice plans"}, data: plans, statusCode: 400});
+        res.status(400).json({error: {message: "Something went wrong while accessing teacher practice plans", data: plans, statusCode: 400}});
     }
 };
 
@@ -60,10 +60,10 @@ const getAllStudentPlans = async (req, res, next) => {
     try {
         if (200) {
             await Plan.find({}).then((plans) =>
-            res.status(200).json({success: {message: "Route to VIEW student Practice Plans"}, data: plans, statusCode: 200,}))
+            res.status(200).json({success: {message: "Route to VIEW student Practice Plans", data: plans, statusCode: 200}}))
         }
     } catch (error) {
-        res.status(400).json({error: {message: "Something went wrong while accessing student practice plans"}, data: plans, statusCode: 400});
+        res.status(400).json({error: {message: "Something went wrong while accessing student practice plans", data: plans, statusCode: 400}});
     }
 };
 
@@ -71,10 +71,10 @@ const getAllMusicianPlans = async (req, res, next) => {
     try {
         if (200) {
             await Plan.find({}).then((plans) =>
-            res.status(200).json({success: {message: "Route to VIEW musician Practice Plans"}, data: plans, statusCode: 200,}))
+            res.status(200).json({success: {message: "Route to VIEW musician Practice Plans", data: plans, statusCode: 200}}))
         }
     } catch (error) {
-        res.status(400).json({error: {message: "Something went wrong while accessing musician practice plans"}, data: plans, statusCode: 400});
+        res.status(400).json({error: {message: "Something went wrong while accessing musician practice plans", data: plans, statusCode: 400}});
     }
 };
 
@@ -83,7 +83,7 @@ const getPlan = async (req, res, next) => {
     const {id} =req.params;
     try{
         if (200) {
-            await Plan.findOne({_id: id}).then((books) => {
+            await Plan.findOne({_id: id}).then((plans) => {
                 res.status(200).json({success: {message: "Success! Found he plan you were looking for", data: plans, statusCode:200}})
             })
         }
