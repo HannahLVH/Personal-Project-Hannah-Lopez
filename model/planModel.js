@@ -6,19 +6,19 @@ const planSchema = new Schema ({
     activity1: {
         type: String,
     },
-    annotations1:{
+    practiceNotes1:{
         type: String,
     },
     activity2: {
         type: String,
     },
-    annotations2:{
+    practiceNotes2:{
         type: String,
     },
     activity3: {
         type: String,
     },
-    annotations3:{
+    practiceNotes3:{
         type: String,
     },
 })
