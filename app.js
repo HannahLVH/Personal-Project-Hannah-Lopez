@@ -45,7 +45,7 @@ app.use(passport.session());
 
 //ROUTES
 
-app.get("/index", (req, res, next) => {
+app.get("/", (req, res, next) => {
     // res.status(200).json({success: {message: "Index Page"}, data: {planData}, statusCode: 200});
     // res.json("Index landing page")
     res.send(

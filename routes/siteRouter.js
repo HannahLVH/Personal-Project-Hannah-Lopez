@@ -1,12 +1,10 @@
 //Signup, Login, Logout Routes
-require("../config/connection");
-require("../config/authStrategy");
-
-
 const express = require("express");
-const router = express.Router();
+const passport = require("passport");
 
 const {loginLocalFailed, logoutRequest, signupRequest} = require("../controllers/siteControllers");
+
+const router = express.Router();
 
 //index
 
