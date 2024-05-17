@@ -17,6 +17,7 @@ const userSchema = new Schema ({
     },
     password: {
         type: Buffer,
+        required: true,
     },
     salt: {
         type: Buffer,
@@ -24,6 +25,9 @@ const userSchema = new Schema ({
     strategy: {
         type: String,
         required: true,
+    },
+    role: {
+        type: String,
     }
 });
 
