@@ -1,6 +1,5 @@
 const User = require("../model/userModel");
 const Plan = require("../model/planModel");
-const Schedule = require("../model/scheduleModel");
 
 //EDIT Profile
 const editProfile = async (req, res, next) => {
@@ -124,6 +123,15 @@ const createPlan = async (req, res, next) => {
 
   const createdByUser = await User.findById(createdBy);
   const assignedToUser = await User.findById(assignedTo);
+
+  if (!createdByUser || !assignedToUser) {
+    return res.status(404).json({
+      error: {
+        message: "User not found",
+        statusCode: 404
+      }
+    });
+  }
 
   const newPlan = new Plan({
     createdBy: {
