@@ -28,15 +28,17 @@ router.get("/student/account-settings", (req, res, next) => {
 // user EDIT profile - WORKS
     //CRUD
 router.put("/profile/:id", editProfile);
+    //Test
 router.get("/profile/:id", editProfile);
 
 // STUDENT-ROSTER - WORKS
     //GET ALL STUDENTS
-    router.get("/student-roster", getAllStudents);
+router.get("/student-roster", getAllStudents);
 
 // PRACTICE PLAN ROUTES
     //GET ALL practice plans: BOTH WORK
 router.get("/teacher-plans/:userId", getAllTeacherPlans);
+    //Test
 router.get("/student-plans/:userId", getAllStudentPlans);
 
     //GET ONE practice plan: WORKS
@@ -46,20 +48,21 @@ router.get("/plans/:id", getPlan);
     // CREATE practice plan
     //CRUD
 router.post("/create-plan", createPlan);
-    //TEST
+    //Test
 router.get("/create-plan", createPlan);
 
 
     // EDIT practice plans
     //CRUD
 router.put("/edit-plan/:id", editPlan);
-    //TEST
+    //Test
 router.get("/edit-plan/:id", editPlan);
 
 
     // DELETE practice plans
     //CRUD
 router.delete("/delete-plan/:id", deletePlan);
+    //Test
 router.get("/delete-plan/:id", deletePlan);
 
 
