@@ -5,15 +5,16 @@ const Schedule = require("../model/scheduleModel");
 //EDIT Profile
 const editProfile = async (req, res, next) => {
   const { id } = req.params;
-  const { firstName, lastName, username } = req.body;
+  const { firstName, lastName, username, role } = req.body;
   try {
-    await User.findByIdAndUpdate(
+    const updatedProfile = await User.findByIdAndUpdate(
       id,
       {
         $set: {
           firstName,
           lastName,
           username,
+          role
         },
       },
       { new: true }
@@ -21,8 +22,8 @@ const editProfile = async (req, res, next) => {
     res.status(201).json({
       success: {
         message: "Your profile is updated",
-        data: newUser,
-        statusCode: 201,
+        data: updatedProfile,
+        statusCode: 201
       },
     });
   } catch (error) {
@@ -113,21 +114,29 @@ const getPlan = async (req, res, next) => {
 
 //CREATE Practice Plan
 const createPlan = async (req, res, next) => {
-  const {
-    createdByID,
-    assignedToID,
-    title,
-    activity,
-    practiceNotes,
-  } = req.body;
+    const {
+        createdBy,
+        assignedTo,
+        title,
+        activity,
+        practiceNotes,
+    } = req.body;
 
-  const createdByUser = await User.findById(createdByID);
-  const assignedToUser = await User.findById(assignedToID)
+  const createdByUser = await User.findById(createdBy);
+  const assignedToUser = await User.findById(assignedTo);
 
   const newPlan = new Plan({
-    createdBy: createdByUser,
-    assignedTo: assignedToUser,
-    createdOn: Date(),
+    createdBy: {
+        _id: createdByUser._id,
+        username: createdByUser.username,
+        role: createdByUser.role
+    },
+    assignedTo: {
+        _id: assignedToUser._id,
+        username: assignedToUser.username,
+        role: assignedToUser.role
+    },
+    createdOn: new Date(),
     title,
     activity,
     practiceNotes
@@ -177,7 +186,7 @@ const editPlan = async (req, res, next) => {
       { new: true });
     
     res.status(201).json({
-      success: { message: "Plan is updated", data: Plan, statusCode: 201 },
+      success: { message: "Plan is updated", data: updatedPlan, statusCode: 201 },
     });
   } catch (error) {
     res.status(400).json({

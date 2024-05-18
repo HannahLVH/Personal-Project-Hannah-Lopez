@@ -1,15 +1,18 @@
 const mongoose = require("mongoose");
 
-const { Schema } = mongoose;
-
-const userSchema = new Schema({
-  username: String,
-  role: String,
-});
+const { Schema, ObjectId } = mongoose;
 
 const planSchema = new Schema({
-  createdBy: userSchema,
-  assignedTo: userSchema,
+  createdBy: {
+    _id: String,
+    username: String,
+    role: String,
+  },
+  assignedTo: {
+    _id: String,
+    username: String,
+    role: String,
+  },
   createdOn: {
     type: Date,
   },
