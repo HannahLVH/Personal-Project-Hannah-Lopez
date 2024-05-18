@@ -1,0 +1,3 @@
+{"_id":{"$oid":"6648203e5142c81bbfde843b"},"firstName":"Hannah","lastName":"Lopez","username":"hannah-lopez","role":"Teacher"}
+{"_id":{"$oid":"6648203e5142c81bbfde843c"},"firstName":"Jane","lastName":"Doe","username":"jane-doe","role":"Student"}
+{"_id":{"$oid":"6648203e5142c81bbfde843d"},"firstName":"John","lastName":"Doe","username":"john-doe","role":"Student"}

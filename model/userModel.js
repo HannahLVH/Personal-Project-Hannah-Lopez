@@ -15,6 +15,11 @@ const userSchema = new Schema ({
         required: true,
         unique: true,
     },
+    role: {
+        type: String,
+        required: true,
+        enum: ["Teacher", "Student"]
+    },
     password: {
         type: Buffer,
         required: true,
@@ -25,12 +30,10 @@ const userSchema = new Schema ({
     strategy: {
         type: String,
         required: true,
-    },
-    role: {
-        type: String,
     }
 });
 
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
+

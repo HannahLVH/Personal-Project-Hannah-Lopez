@@ -4,9 +4,8 @@ const { Schema } = mongoose;
 
 const planSchema = new Schema({
   createdBy: {
-    user: {
       id: {
-        type: String,
+        type: Number,
       },
       username: {
         type: String,
@@ -14,15 +13,13 @@ const planSchema = new Schema({
       role: {
         type: String,
       },
-    },
   },
   createdOn: {
     type: Date,
   },
   assignedTo: {
-    user: {
         id: {
-          type: String,
+          type: Number,
         },
         username: {
           type: String,
@@ -30,7 +27,6 @@ const planSchema = new Schema({
         role: {
           type: String,
         },
-      },
   },
 //   status: {
 //     type: String,    

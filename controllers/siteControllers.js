@@ -25,6 +25,7 @@ const signupRequest = (req, res, next) => {
             firstName,
             lastName,
             username,
+            role,
             password: hashedPassword,
         });
         try {

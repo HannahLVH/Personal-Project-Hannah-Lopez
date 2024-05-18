@@ -6,13 +6,11 @@ const { Schema } = mongoose;
 //only for student
 const scheduleSchema = new Schema({
   userId: { //student user ID
-    type: String,
+    type: Number,
   },
-  planId: [
-    {
-      type: String,
-    },
-  ],
+  planId: {
+    type: Number,
+  },
 });
 
 const Schedule = mongoose.model("Schedule", scheduleSchema);

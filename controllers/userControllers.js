@@ -34,34 +34,24 @@ const editProfile = async (req, res, next) => {
     });
   }
 };
-//should I create one for each type of user?
-/*
-const editStudentProfile = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to EDIT Student profile"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while editing student profile", statusCode: 400}})
-    }
-}
 
-const editMusicianProfile = async (req, res, next) => {
+const getAllStudents = async (req, res, next) => {
     try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to EDIT Musician profile"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while editing musician profile", statusCode: 400}})
+    if (200) {
+        const users = await User.find({role: "Student"});
+        res.status(200).json({success: {message: "This is your Student Roster"}, data: users, statusCode: 200,
+        })
     }
-}
-*/
+    } catch (error) {
+        res.status(400).json({error: {message: "There was an error getting your student roster"}})
+    }
+};
 
 //GET ALL Plans
 const getAllTeacherPlans = async (req, res, next) => {
   const { userId } = req.params;
   try {
-    const plans = await Plan.find({ "createdBy.user.id": userId });
+    const plans = await Plan.find({ "createdBy.id": userId });
     res.status(200).json({
       success: { message: "Route to VIEW Teacher Practice Plans" },
       data: plans,
@@ -80,7 +70,7 @@ const getAllTeacherPlans = async (req, res, next) => {
 const getAllStudentPlans = async (req, res, next) => {
   const { userId } = req.params;
   try {
-    const plans = await Schedule.find({ userId: userId });
+    const plans = await Plan.find({ "assignedTo.id": userId });
     res.status(200).json({
       success: {
         message: "Route to VIEW student Practice Plans",
@@ -97,32 +87,6 @@ const getAllStudentPlans = async (req, res, next) => {
     });
   }
 };
-
-// const getAllMusicianPlans = async (req, res, next) => {
-//   try {
-//     if (200) {
-//       await Plan.find({}).then((plans) =>
-//         res.status(200).json({
-//           success: {
-//             message: "Route to VIEW musician Practice Plans",
-//             data: plans,
-//             statusCode: 200,
-//           },
-//         })
-//       );
-//     }
-//   } catch (error) {
-//     res.status(400).json({
-//       error: {
-//         message: "Something went wrong while accessing musician practice plans",
-//         data: plans,
-//         statusCode: 400,
-//       },
-//     });
-//   }
-// };
-
-
 
 //GET ONE Plan
 const getPlan = async (req, res, next) => {
@@ -184,29 +148,6 @@ const createPlan = async (req, res, next) => {
   }
 };
 
-//should I create one for each type of user?
-/*
-const createStudentPlan = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to CREATE Student practice plan"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while creating student practice plan", statusCode: 400}})
-    }
-}
-
-const createMusicianPlan = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to CREATE Musician practice plan"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while creating musician practice plan", statusCode: 400}})
-    }
-}
-*/
-
 // EDIT Practice Plan
 
 const editPlan = async (req, res, next) => {
@@ -244,28 +185,6 @@ const editPlan = async (req, res, next) => {
     });
   }
 };
-//should I create one for each type of user?
-/*
-const editStudentPlan = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to EDIT Student practice plan"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while editing student practice plan", statusCode: 400}})
-    }
-}
-
-const editMusicianPlan = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to EDIT Musician practice plan"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while editing musician practice plan", statusCode: 400}})
-    }
-}
-*/
 
 // DELETE Practice Plan
 
@@ -290,30 +209,9 @@ const deletePlan = async (req, res, next) => {
   }
 };
 
-//should I create one for each type of user?
-/*
-const deleteStudentPlan = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to DELETE Student practice plan"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while deleting student practice plan", statusCode: 400}})
-    }
-}
-const deleteMusicianPlan = async (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to DELETE Musician practice plan"}, statusCode: 200})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while deleting musician practice plan", statusCode: 400}})
-    }
-}
-*/
-
 module.exports = {
   editProfile,
+  getAllStudents,
   getAllTeacherPlans,
   getAllStudentPlans,
   getPlan,
