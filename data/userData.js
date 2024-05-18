@@ -6,6 +6,12 @@ const userData = [
     role: "Teacher",
   },
   {
+    firstName: "Matt",
+    lastName: "Hughes",
+    username: "matt-hughes",
+    role: "Teacher",
+  },
+  {
     firstName: "Jane",
     lastName: "Doe",
     username: "jane-doe",
@@ -17,6 +23,18 @@ const userData = [
     username: "john-doe",
     role: "Student",
   },
+  {
+    firstName: "Jack",
+    lastName: "Doe",
+    username: "jack-doe",
+    role: "Student",
+  },
+  {
+    firstName: "Jazz",
+    lastName: "Doe",
+    username: "jazz-doe",
+    role: "Student",
+  }
 ];
 
 module.exports = userData;

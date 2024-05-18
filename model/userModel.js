@@ -30,8 +30,12 @@ const userSchema = new Schema ({
     strategy: {
         type: String,
         required: true,
+    },
+},
+    {
+    _id: true
     }
-});
+);
 
 const User = mongoose.model("User", userSchema);
 

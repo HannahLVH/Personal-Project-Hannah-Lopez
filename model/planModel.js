@@ -2,35 +2,17 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
+const userSchema = new Schema({
+  username: String,
+  role: String,
+});
+
 const planSchema = new Schema({
-  createdBy: {
-      id: {
-        type: Number,
-      },
-      username: {
-        type: String,
-      },
-      role: {
-        type: String,
-      },
-  },
+  createdBy: userSchema,
+  assignedTo: userSchema,
   createdOn: {
     type: Date,
   },
-  assignedTo: {
-        id: {
-          type: Number,
-        },
-        username: {
-          type: String,
-        },
-        role: {
-          type: String,
-        },
-  },
-//   status: {
-//     type: String,    
-//   },
   title: {
     type: String,
   },
@@ -40,7 +22,8 @@ const planSchema = new Schema({
   practiceNotes: {
     type: String,
   },
-});
+},
+);
 
 const Plan = mongoose.model("Plan", planSchema);
 

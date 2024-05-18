@@ -51,7 +51,7 @@ const getAllStudents = async (req, res, next) => {
 const getAllTeacherPlans = async (req, res, next) => {
   const { userId } = req.params;
   try {
-    const plans = await Plan.find({ "createdBy.id": userId });
+    const plans = await Plan.find({ "createdBy._id": userId });
     res.status(200).json({
       success: { message: "Route to VIEW Teacher Practice Plans" },
       data: plans,
@@ -70,7 +70,7 @@ const getAllTeacherPlans = async (req, res, next) => {
 const getAllStudentPlans = async (req, res, next) => {
   const { userId } = req.params;
   try {
-    const plans = await Plan.find({ "assignedTo.id": userId });
+    const plans = await Plan.find({ "assignedTo._id": userId });
     res.status(200).json({
       success: {
         message: "Route to VIEW student Practice Plans",
@@ -92,7 +92,7 @@ const getAllStudentPlans = async (req, res, next) => {
 const getPlan = async (req, res, next) => {
   const { id } = req.params;
   try {
-    const plan = await Plan.findOneById(id);
+    const plan = await Plan.findOne({_id: id});
     res.status(200).json({
       success: {
         message: "Success! Found the plan you were looking for",
@@ -110,23 +110,27 @@ const getPlan = async (req, res, next) => {
   }
 };
 
+
 //CREATE Practice Plan
 const createPlan = async (req, res, next) => {
   const {
-    createdBy,
-    assignedTo,
+    createdByID,
+    assignedToID,
     title,
     activity,
     practiceNotes,
   } = req.body;
 
+  const createdByUser = await User.findById(createdByID);
+  const assignedToUser = await User.findById(assignedToID)
+
   const newPlan = new Plan({
-    createdBy,
-    createdOn: new Date(),
-    assignedTo,
+    createdBy: createdByUser,
+    assignedTo: assignedToUser,
+    createdOn: Date(),
     title,
-    activity: activity,
-    practiceNotes: practiceNotes,
+    activity,
+    practiceNotes
   });
 
   try {
@@ -160,8 +164,7 @@ const editPlan = async (req, res, next) => {
   } = req.body;
 
   try {
-    await Plan.findByIdAndDelete(
-      id,
+    const updatedPlan = await Plan.findOneAndUpdate({ _id: id },
       {
         $set: {
             createdOn: new Date(),
@@ -171,10 +174,10 @@ const editPlan = async (req, res, next) => {
             practiceNotes,
         },
       },
-      { new: true }
-    );
+      { new: true });
+    
     res.status(201).json({
-      success: { message: "Book is updated", data: newBook, statusCode: 201 },
+      success: { message: "Plan is updated", data: Plan, statusCode: 201 },
     });
   } catch (error) {
     res.status(400).json({
@@ -192,7 +195,7 @@ const deletePlan = async (req, res, next) => {
   const { id } = req.params;
 
   try {
-    await Plan.findByIdAndDelete(id);
+    await Plan.findOneAndDelete({_id: id});
     res.status(200).json({
       success: {
         message: "The practice plan was deleted successfully",

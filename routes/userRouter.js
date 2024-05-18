@@ -33,37 +33,35 @@ router.put("/profile/:id", editProfile); //<<<<<<----FIX
 
 
 // PRACTICE PLAN ROUTES
-    //GET ALL practice plans:
+    //GET ALL practice plans: BOTH WORK
 router.get("/teacher-plans/:userId", getAllTeacherPlans);
 router.get("/student-plans/:userId", getAllStudentPlans);
 
-    //GET ONE practice plan:
-router.get("/plans/:id", getPlan); //<<<<---FIX
+    //GET ONE practice plan: WORKS
+router.get("/plans/:id", getPlan); 
 
 // Practice plan Operations
     // CREATE practice plan
     //CRUD
-router.post("/plans", createPlan);
-
+router.post("/create-plan/", createPlan);
     //TEST
-router.get("/plans", createPlan);
+router.get("/create-plan/", createPlan);
 
 
     // EDIT practice plans
     //CRUD
-router.put("/plans/:id", editPlan);
-
+router.put("/edit-plan/:id", editPlan);
     //TEST
-router.get("/plans/:id", editPlan);
+router.get("/edit-plan/:id", editPlan);
 
 
     // DELETE practice plans
     //CRUD
-router.delete("/plans/:id", deletePlan);
+router.delete("/delete-plan/:id", deletePlan);
+router.get("/delete-plan/:id", deletePlan);
 
 
-// teacher student roster
-//??????????????????????
+// teacher student roster - WORKS
 router.get("/student-roster", getAllStudents);
 
 module.exports = router;
