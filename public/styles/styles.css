@@ -87,7 +87,7 @@ body button:active {
 }
 
 .nav-logo-background img:active {
-    background-color: var(--Sunset);
+    background-color: var(--Blue-Delft);
 }
 
 .nav-banner-img {
@@ -915,11 +915,19 @@ li:hover .profile-dropdown-styling {
     margin-right: 0;
 }
 
+.hlv-logo-link-styling img:hover {
+    background-color: var(--Eggshell);
+}
+
+.hlv-logo-link-styling img:active {
+    background-color: var(--Blue-Delft);
+}
+
 .footer-hannah-lovez-logo {
     position: relative;
     left: 1em;
     border-radius: 50%;
-    background-color: #81B29A;
+    background-color: var(--Light-Blue-Cambridge);
 }
 
 .product h3{
