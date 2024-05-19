@@ -32,8 +32,8 @@ const signupRequest = (req, res, next) => {
         });
         try {
             await newUser.save()
-            req.login(newUser, (err) => {
-                if (err) {
+            req.login(newUser, (error) => {
+                if (error) {
                 res.status(400).json({error: {message: "Something went wrong while signing up!", statusCode: 400}});
                 }
             })
