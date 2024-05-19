@@ -45,21 +45,21 @@ router.get("/student-plans/:userId", getAllStudentPlans);
 router.get("/plans/:id", getPlan); 
 
 // Practice plan Operations
-    // CREATE practice plan
+    // CREATE practice plan - WORKS
     //CRUD
 router.post("/create-plan", createPlan);
     //Test
 router.get("/create-plan", createPlan);
 
 
-    // EDIT practice plans
+    // EDIT practice plans - WORKS
     //CRUD
 router.put("/edit-plan/:id", editPlan);
     //Test
 router.get("/edit-plan/:id", editPlan);
 
 
-    // DELETE practice plans
+    // DELETE practice plans -WORKS
     //CRUD
 router.delete("/delete-plan/:id", deletePlan);
     //Test
