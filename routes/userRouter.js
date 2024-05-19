@@ -36,7 +36,7 @@ router.get("/profile/:id", editProfile);
 router.get("/student-roster", getAllStudents);
 
 // PRACTICE PLAN ROUTES
-    //GET ALL practice plans: BOTH WORK
+    //GET ALL practice plans: - BOTH WORK
 router.get("/teacher-plans/:userId", getAllTeacherPlans);
     //Test
 router.get("/student-plans/:userId", getAllStudentPlans);
