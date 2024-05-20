@@ -1,11 +1,11 @@
 
 :root {
     --Eggshell: #F4F1DE;
-    --Sienna-Burnt: #E07A5F;
-    --Blue-Delft: #3D405B;
+    --Sienna-Burnt: #5a9c82;
+    --Blue-Delft: #415b63;
     --Blue-Cambridge: #81B29A;
-    --Light-Blue-Cambridge:  #92b5a4;
-    --Sunset: #F2CC8F;
+    --Light-Blue-Cambridge: #a4c7b5;
+    --Sunset: #eddfca;
     --white: #FFFFFF;
     --black: #000000;
 }
@@ -87,7 +87,7 @@ body button:active {
 }
 
 .nav-logo-background img:active {
-    background-color: var(--Sunset);
+    background-color: var(--Blue-Delft);
 }
 
 .nav-banner-img {
@@ -915,11 +915,19 @@ li:hover .profile-dropdown-styling {
     margin-right: 0;
 }
 
+.hlv-logo-link-styling img:hover {
+    background-color: var(--Eggshell);
+}
+
+.hlv-logo-link-styling img:active {
+    background-color: var(--Blue-Delft);
+}
+
 .footer-hannah-lovez-logo {
     position: relative;
     left: 1em;
     border-radius: 50%;
-    background-color: #81B29A;
+    background-color: var(--Light-Blue-Cambridge);
 }
 
 .product h3{
