@@ -93,7 +93,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
   <li>Built in timer</li>
   <li>Practice session journal</li>
   <li>Visual progress tracker</li>
-  <li>Practime time reminders</li>
+  <li>Practice time reminders</li>
   <li>Gamification elements to celebrate achievements and milestones</li>
 </ul>
 
