@@ -33,7 +33,7 @@ passport.use(
 passport.use(new GithubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "https://practice-time-hannah-lopez.onrender.com/auth/github", //change to RENDER URI
+    callbackURL: "https://practice-time-hannah-lopez.onrender.com/auth/github", 
     },
     (accessToken, refreshToken, profile, done) => {
         console.log(profile);
@@ -44,7 +44,7 @@ passport.use(new GithubStrategy({
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://practice-time-hannah-lopez.onrender.com/auth/google", //change to RENDER URI
+    callbackURL: "https://practice-time-hannah-lopez.onrender.com/auth/google", 
     scope: ["profile"]
     },
     (accessToken, refreshToken, profile, done) => {
