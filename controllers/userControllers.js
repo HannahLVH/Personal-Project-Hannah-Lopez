@@ -73,39 +73,34 @@ const getAllStudentPlans = async (req, res, next) => {
     const plans = await Plan.find({ "assignedTo._id": userId });
     res.status(200).json({
       success: {
-        message: "Route to VIEW student Practice Plans",
+        message: "Route to VIEW student Practice Plans"},
         data: plans,
         statusCode: 200,
-      },
     });
   } catch (error) {
     res.status(400).json({
       error: {
-        message: "Something went wrong while accessing student practice plans",
+        message: "Something went wrong while accessing student practice plans"},
         statusCode: 400,
-      },
     });
   }
 };
 
 //GET ONE Plan
 const getPlan = async (req, res, next) => {
-  const { id } = req.params;
+  const { planId } = req.params;
   try {
-    const plan = await Plan.findOne({_id: id});
+    const plan = await Plan.findById(planId);
     res.status(200).json({
-      success: {
-        message: "Success! Found the plan you were looking for",
-        data: plan,
-        statusCode: 200,
-      },
+      success: {message: "Success! Found the plan you were looking for"},
+      data: plan,
+      statusCode: 200,
     });
   } catch (error) {
     res.status(400).json({
       error: {
-        message: "Error! Something went wrong retrieving the plan!",
+        message: "Error! Something went wrong retrieving the plan!"},
         statusCode: 400,
-      },
     });
   }
 };
@@ -172,7 +167,7 @@ const createPlan = async (req, res, next) => {
 // EDIT Practice Plan
 
 const editPlan = async (req, res, next) => {
-  const { id } = req.params;
+  const { planId } = req.params;
   const {
     assignedTo,
     title,
@@ -181,21 +176,19 @@ const editPlan = async (req, res, next) => {
   } = req.body;
 
   try {
-    const updatedPlan = await Plan.findOneAndUpdate({ _id: id },
-      {
-        $set: {
+    const updatePlan = await Plan.findByIdAndUpdate(
+      planId ,
+      {$set: {
             createdOn: new Date(),
             assignedTo,
             title,
             activity,
             practiceNotes,
-        },
-      },
+      }},
       { new: true });
     
     res.status(201).json({
-      success: { message: "Plan is updated", data: updatedPlan, statusCode: 201 },
-    });
+      success: { message: "Plan is updated"}, data: updatePlan, statusCode: 201 });
   } catch (error) {
     res.status(400).json({
       error: {

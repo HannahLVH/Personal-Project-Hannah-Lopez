@@ -37,12 +37,12 @@ router.get("/student-roster", getAllStudents);
 
 // PRACTICE PLAN ROUTES
     //GET ALL practice plans: - BOTH WORK
-router.get("/teacher-plans/:userId", getAllTeacherPlans);
+router.get("/plans/:userId", getAllTeacherPlans);
     //Test
-router.get("/student-plans/:userId", getAllStudentPlans);
+router.get("/student/:userId", getAllStudentPlans);
 
     //GET ONE practice plan: WORKS
-router.get("/plans/:id", getPlan); 
+router.get("/plan/:planId", getPlan); 
 
 // Practice plan Operations
     // CREATE practice plan - WORKS
@@ -54,9 +54,9 @@ router.get("/create-plan", createPlan);
 
     // EDIT practice plans - WORKS
     //CRUD
-router.put("/edit-plan/:id", editPlan);
+router.put("/edit-plan/:planId", editPlan);
     //Test
-router.get("/edit-plan/:id", editPlan);
+// router.get("/edit-plan/:id", editPlan);
 
 
     // DELETE practice plans -WORKS
