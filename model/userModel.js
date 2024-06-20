@@ -20,6 +20,11 @@ const userSchema = new Schema ({
         required: true,
         enum: ["Teacher", "Student"]
     },
+
+    about: {
+        type: String,
+    },
+    
     password: {
         type: Buffer,
         required: true,

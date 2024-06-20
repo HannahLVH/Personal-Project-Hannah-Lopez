@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const {editProfile, getAllTeacherPlans, getAllStudentPlans, getPlan, createPlan, editPlan, deletePlan, getAllStudents} = require("../controllers/userControllers");
+const {getProfile, editProfile, getAllTeacherPlans, getAllStudentPlans, getPlan, createPlan, editPlan, deletePlan, getAllStudents} = require("../controllers/userControllers");
 
 // user account settings
 
@@ -25,11 +25,12 @@ router.get("/student/account-settings", (req, res, next) => {
     }
 })
 
+    //GET
+router.get("/profile/:userId", getProfile);
 // user EDIT profile - WORKS
-    //CRUD
-router.put("/profile/:id", editProfile);
-    //Test
-router.get("/profile/:id", editProfile);
+    //EDIT
+router.put("/edit-profile/:userId", editProfile);
+
 
 // STUDENT-ROSTER - WORKS
     //GET ALL STUDENTS

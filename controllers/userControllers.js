@@ -1,29 +1,52 @@
 const User = require("../model/userModel");
 const Plan = require("../model/planModel");
 
+
+//GET Profile
+
+const getProfile = async (req, res, next) => {
+  const {userId} = req.params;
+  try{
+    const user = await User.findById(userId);
+    res.status(200).json({
+      success: {message: "Success! Your user profile was retrieved"},
+      data: user,
+      statusCode: 200,
+    });
+  } catch (error) {
+    res.status(400).json({
+      error: {
+      message: "Error! Something went wrong when retrieving your profile"},
+    statusCode: 400,
+  });
+  }
+};
 //EDIT Profile
 const editProfile = async (req, res, next) => {
-  const { id } = req.params;
-  const { firstName, lastName, username, role } = req.body;
+  const { userId } = req.params;
+  const { 
+    firstName, 
+    lastName, 
+    username, 
+    about 
+  } = req.body;
+
   try {
     const updatedProfile = await User.findByIdAndUpdate(
-      id,
-      {
-        $set: {
+      userId,
+      {$set: {
           firstName,
           lastName,
           username,
-          role
-        },
-      },
-      { new: true }
-    );
+          about
+        }},
+      { new: true });
+
     res.status(201).json({
       success: {
-        message: "Your profile is updated",
+        message: "Your profile is updated"},
         data: updatedProfile,
         statusCode: 201
-      },
     });
   } catch (error) {
     res.status(400).json({
@@ -223,6 +246,7 @@ const deletePlan = async (req, res, next) => {
 };
 
 module.exports = {
+  getProfile,
   editProfile,
   getAllStudents,
   getAllTeacherPlans,
