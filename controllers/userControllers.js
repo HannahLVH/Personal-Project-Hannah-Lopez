@@ -131,15 +131,17 @@ const getPlan = async (req, res, next) => {
 
 //CREATE Practice Plan
 const createPlan = async (req, res, next) => {
+  // const userId = req._id
     const {
-        createdBy,
+        createdBy: _id,
         assignedTo,
         title,
         activity,
         practiceNotes,
     } = req.body;
 
-  const createdByUser = await User.findById(createdBy);
+  const createdByUser = await User.findById(_id);
+  console.log(createdByUser)
   const assignedToUser = await User.findById(assignedTo);
 
   if (!createdByUser || !assignedToUser) {
@@ -150,6 +152,14 @@ const createPlan = async (req, res, next) => {
       }
     });
   }
+
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit"
+
+  })
 
   const newPlan = new Plan({
     createdBy: {
@@ -162,7 +172,7 @@ const createPlan = async (req, res, next) => {
         username: assignedToUser.username,
         role: assignedToUser.role
     },
-    createdOn: new Date(),
+    createdOn: formattedDate,
     title,
     activity,
     practiceNotes
@@ -172,7 +182,7 @@ const createPlan = async (req, res, next) => {
     await newPlan.save();
     res.status(200).json({
       success: {
-        message: "Route to CREATE Teacher practice plan",
+        message: "Plan created successfully",
         data: newPlan,
         statusCode: 200,
       },

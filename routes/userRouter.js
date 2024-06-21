@@ -48,9 +48,9 @@ router.get("/plan/:planId", getPlan);
 // Practice plan Operations
     // CREATE practice plan - WORKS
     //CRUD
-router.post("/create-plan", createPlan);
+router.post("/:userId/create-plan", createPlan);
     //Test
-router.get("/create-plan", createPlan);
+// router.get("/create-plan", createPlan);
 
 
     // EDIT practice plans - WORKS
