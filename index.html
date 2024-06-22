@@ -32,18 +32,37 @@
                 </ul>
             </div>
             <div class="hamburger-menu">
-                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>  
+                <i class="fa-solid fa-bars" style="color: #F4F1DE;"></i>  
+                <ul class="hamburger-dropdown">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="create-account.html">CREATE ACCOUNT</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
             </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const hamburgerIcon = document.querySelector('.hamburger-menu i');
+                    const dropdownMenu = document.querySelector('.hamburger-dropdown');
+
+                    hamburgerIcon.addEventListener('click', function () {
+                        if (dropdownMenu.style.display === "block") {
+                            dropdownMenu.style.display = "none";
+                        } else {
+                            dropdownMenu.style.display = "block";
+                        }
+                    });
+                });
+            </script>
         </nav>
     </div>
 <!-- Pentagram Design -->
-    <div class="pentagram">
+    <!-- <div class="pentagram">
         <span><div class="line"></div></span>
         <span><div class="line"></div></span>
         <span><div class="line"></div></span>
         <span><div class="line"></div></span>
         <span><div class="line"></div></span>
-    </div>
+    </div> -->
 <!-- CONTENT SECTION -->
     <div class="content-section">
         <div class="text-container-1">
