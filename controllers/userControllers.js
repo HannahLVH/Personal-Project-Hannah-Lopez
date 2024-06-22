@@ -131,8 +131,9 @@ const getPlan = async (req, res, next) => {
 
 //CREATE Practice Plan
 const createPlan = async (req, res, next) => {
-  const {userId} = req.params;
+  // const {userId} = req.params;
     const {
+        createdBy,
         assignedTo,
         title,
         activity,
@@ -141,7 +142,7 @@ const createPlan = async (req, res, next) => {
 
   try{
 
-  const createdByUser = await User.findById(userId);
+  const createdByUser = await User.findById(createdBy);
   console.log("created by", createdByUser)
   const assignedToUser = await User.findById(assignedTo);
   console.log("created by", assignedToUser);
@@ -175,7 +176,11 @@ const createPlan = async (req, res, next) => {
   console.log(formattedDate)
 
   const newPlan = new Plan({
-    createdBy: userId,
+    createdBy: {
+      _id: createdByUser._id,
+      username: createdByUser.username,
+      role: createdByUser.role,
+  },
 
     assignedTo: {
       _id: assignedToUser._id,
