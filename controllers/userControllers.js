@@ -131,19 +131,28 @@ const getPlan = async (req, res, next) => {
 
 //CREATE Practice Plan
 const createPlan = async (req, res, next) => {
-  // const userId = req._id
+  const {userId} = req.params;
     const {
-        createdBy: _id,
         assignedTo,
         title,
         activity,
         practiceNotes,
     } = req.body;
 
-  const createdByUser = await User.findById(_id);
-  console.log(createdByUser)
-  const assignedToUser = await User.findById(assignedTo);
+  try{
 
+  const createdByUser = await User.findById(userId);
+  console.log("created by", createdByUser)
+  const assignedToUser = await User.findById(assignedTo);
+  console.log("created by", assignedToUser);
+
+  // } catch (error) { 
+  //   // (!createdByUser || !assignedTo) 
+    
+  //   res.status(404).json({
+  //     error: {
+  //       message: "User not found"},
+  //       statusCode: 404
   if (!createdByUser || !assignedToUser) {
     return res.status(404).json({
       error: {
@@ -153,46 +162,48 @@ const createPlan = async (req, res, next) => {
     });
   }
 
+
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString("en-US", {
     year: "2-digit",
     month: "2-digit",
-    day: "2-digit"
-
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
   })
+  
+  console.log(formattedDate)
 
   const newPlan = new Plan({
-    createdBy: {
-        _id: createdByUser._id,
-        username: createdByUser.username,
-        role: createdByUser.role
-    },
+    createdBy: userId,
+
     assignedTo: {
-        _id: assignedToUser._id,
-        username: assignedToUser.username,
-        role: assignedToUser.role
-    },
+      _id: assignedToUser._id,
+      username: assignedToUser.username,
+      role: assignedToUser.role,
+    }
+    ,
     createdOn: formattedDate,
     title,
     activity,
     practiceNotes
   });
 
-  try {
+  console.log(newPlan)
+
     await newPlan.save();
     res.status(200).json({
       success: {
-        message: "Plan created successfully",
+        message: "Plan created successfully"},
         data: newPlan,
         statusCode: 200,
-      },
     });
   } catch (error) {
+    console.error("error creating plan", error)
     res.status(400).json({
       error: {
-        message: "Something went wrong while creating practice plan",
+        message: "Something went wrong while creating practice plan"},
         statusCode: 400,
-      },
     });
   }
 };
