@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const {editProfile, getAllTeacherPlans, getAllStudentPlans, getPlan, createPlan, editPlan, deletePlan, getAllStudents} = require("../controllers/userControllers");
+const {getProfile, editProfile, getAllTeacherPlans, getAllStudentPlans, getPlan, createPlan, editPlan, deletePlan, getAllStudents} = require("../controllers/userControllers");
 
 // user account settings
 
@@ -25,11 +25,12 @@ router.get("/student/account-settings", (req, res, next) => {
     }
 })
 
+    //GET
+router.get("/profile/:userId", getProfile);
 // user EDIT profile - WORKS
-    //CRUD
-router.put("/profile/:id", editProfile);
-    //Test
-router.get("/profile/:id", editProfile);
+    //EDIT
+router.put("/edit-profile/:userId", editProfile);
+
 
 // STUDENT-ROSTER - WORKS
     //GET ALL STUDENTS
@@ -37,26 +38,26 @@ router.get("/student-roster", getAllStudents);
 
 // PRACTICE PLAN ROUTES
     //GET ALL practice plans: - BOTH WORK
-router.get("/teacher-plans/:userId", getAllTeacherPlans);
+router.get("/plans/:userId", getAllTeacherPlans);
     //Test
-router.get("/student-plans/:userId", getAllStudentPlans);
+router.get("/student/:userId", getAllStudentPlans);
 
     //GET ONE practice plan: WORKS
-router.get("/plans/:id", getPlan); 
+router.get("/plan/:planId", getPlan); 
 
 // Practice plan Operations
     // CREATE practice plan - WORKS
     //CRUD
-router.post("/create-plan", createPlan);
+router.post("/create-plan/:userId", createPlan);
     //Test
-router.get("/create-plan", createPlan);
+// router.get("/create-plan", createPlan);
 
 
     // EDIT practice plans - WORKS
     //CRUD
-router.put("/edit-plan/:id", editPlan);
+router.put("/edit-plan/:planId", editPlan);
     //Test
-router.get("/edit-plan/:id", editPlan);
+// router.get("/edit-plan/:id", editPlan);
 
 
     // DELETE practice plans -WORKS

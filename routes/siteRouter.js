@@ -38,9 +38,9 @@ router.get("/logout", logoutRequest);
 router.post("/signup", signupRequest);
 
 //For testing purposes
-router.get("/signup", (req, res, next) => {
-    res.json("Path to signup")
-})
+// router.get("/signup", (req, res, next) => {
+//     res.json("Path to signup")
+// })
 
 
 //Github strategy
