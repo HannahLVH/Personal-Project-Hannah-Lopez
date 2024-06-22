@@ -22,6 +22,7 @@ const signupRequest = (req, res, next) => {
     console.log("Request received with data:", req.body);
     bcrypt.hash(password, 10, async (error, hashedPassword) => {
         if (error) {
+            console.error("Error hashing password:", error);
             return next(error);
         }
         const newUser = new User({
@@ -35,10 +36,12 @@ const signupRequest = (req, res, next) => {
             await newUser.save()
             req.login(newUser, (error) => {
                 if (error) {
+                console.error("Error logging in user after signup:", error);
                 res.status(400).json({error: {message: "Something went wrong while signing up!"}, statusCode: 400});
                 }
             });
         } catch (error) {
+            console.error("Error saving new user:", error);
             if (error.code === 11000 && error.keyPattern.username) {
                 res.status(400).json({error: {message: "Username already exists"}, statusCode: 400})
             } else {
