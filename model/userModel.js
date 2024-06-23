@@ -26,11 +26,11 @@ const userSchema = new Schema ({
     },
     
     password: {
-        type: Buffer,
+        type: String,
         required: true,
     },
     salt: {
-        type: Buffer,
+        type: String,
     },
     strategy: {
         type: String,
