@@ -19,6 +19,7 @@ const logoutRequest = (req, res, next) => {
 
 const signupRequest = (req, res, next) => {
     const {firstName, lastName, username, role, password} = req.body;
+    const strategy = "local";
     console.log("Request received with data:", req.body);
     bcrypt.hash(password, 10, async (error, hashedPassword) => {
         if (error) {
@@ -31,6 +32,7 @@ const signupRequest = (req, res, next) => {
             username,
             role,
             password: hashedPassword,
+            strategy
         });
         try {
             await newUser.save()
@@ -38,6 +40,8 @@ const signupRequest = (req, res, next) => {
                 if (error) {
                 console.error("Error logging in user after signup:", error);
                 res.status(400).json({error: {message: "Something went wrong while signing up!"}, statusCode: 400});
+                } else {
+                    return res.status(200).json({ message: "Signup successful!", statusCode: 200, data: newUser });
                 }
             });
         } catch (error) {
