@@ -12,6 +12,7 @@ router.post("/login/local",
     passport.authenticate("local", {failureRedirect: "/login/local/failed"}), (req, res, next) => {
         res.status(200).json({success: {message: "User logged in"}, 
         data:{
+            _id: req.user._id,
             username: req.user.username, 
             // firstName: req.user.firstName,
             // lastName: req.user.lastName,
