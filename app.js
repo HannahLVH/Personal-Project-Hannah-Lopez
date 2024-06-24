@@ -20,6 +20,8 @@ const session = require("express-session");
 
 const passport = require("passport");
 
+const bodyParser = require('body-parser');
+
 app.use(morgan("dev"));
 
 const siteRouter = require("./routes/siteRouter");
@@ -38,6 +40,14 @@ app.use(session({
     secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
+}));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(session({
+  secret: 'yourSecretKey',
+  resave: false,
+  saveUninitialized: false,
 }));
 
 app.use(passport.initialize());
