@@ -14,7 +14,7 @@ const planSchema = new Schema({
     role: String,
   },
   createdOn: {
-    type: Date,
+    type: String,
   },
   title: {
     type: String,
