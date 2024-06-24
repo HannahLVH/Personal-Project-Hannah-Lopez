@@ -13,23 +13,24 @@ router.post("/login/local",
         res.status(200).json({success: {message: "User logged in"}, 
         data:{
             username: req.user.username, 
-            firstName: req.user.firstName,
-            lastName: req.user.lastName,
+            // firstName: req.user.firstName,
+            // lastName: req.user.lastName,
+            password: req.user.password,
         },
         statusCode: 200,
         });
     }
 );
 
-router.get("/login/local", (req, res, next) => {
-    try {
-        if (200) {
-            res.status(200).json({success: {message: "Route to LOGIN"}, statusCode: 200,})
-        }
-    } catch (error) {
-            res.status(400).json({error: {message: "Something went wrong while accessing LOGIN landing page", statusCode: 400}});
-    }
-})
+// router.get("/login/local", (req, res, next) => {
+//     try {
+//         if (200) {
+//             res.status(200).json({success: {message: "Route to LOGIN"}, statusCode: 200,})
+//         }
+//     } catch (error) {
+//             res.status(400).json({error: {message: "Something went wrong while accessing LOGIN landing page", statusCode: 400}});
+//     }
+// })
 
 router.get("/login/local/failed", loginLocalFailed);
 

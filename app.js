@@ -10,8 +10,7 @@ const path = require("node:path");
 
 const app = express();
 
-// const PORT = process.env.PORT || 5001;
-const PORT = 8080;
+const PORT = process.env.PORT || 5001;
 
 const cors = require("cors");
 
