@@ -224,11 +224,20 @@ const editPlan = async (req, res, next) => {
     practiceNotes,
   } = req.body;
 
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
+  })
+
   try {
     const updatePlan = await Plan.findByIdAndUpdate(
       planId ,
       {$set: {
-            createdOn: new Date(),
+            createdOn: formattedDate,
             assignedTo,
             title,
             activity,
