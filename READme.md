@@ -154,6 +154,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - Email: hannahlopez.violin@gmail.com
 
 🎵 Project Link: [https://github.com/HannahLVH/Personal-Project-Hannah-Lopez.git](https://github.com/HannahLVH/Personal-Project-Hannah-Lopez.git)
+
 🎵 "Practice Time" Landing Page: [https://majestic-longma-0f2230.netlify.app/](https://majestic-longma-0f2230.netlify.app/)
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
@@ -175,4 +176,5 @@ Use this space to list resources you find helpful and would like to give credit 
 - [OhMyGit](https://ohmygit.org/)
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
+
 
